@@ -1,0 +1,56 @@
+import { Link } from "react-router-dom";
+
+
+export default function DashboardAdmin() {
+
+   
+
+    return (
+        <>
+        
+<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <div className="container">
+        <a className="navbar-brand" href="#">Dashboard Admin</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                    <Link className="nav-link" href="#">Marsito Kusmawati</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" >Logout</Link>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+ 
+    <header className="jumbotron">
+        <div className="container">
+            <h1 className="display-4">Dashboard</h1>
+        </div>
+    </header>
+ 
+ 
+
+    <div className="container">
+
+    </div>
+
+</main>
+ 
+<footer>
+    <div className="container">
+        <div className="text-center py-4 text-muted">
+            Copyright &copy; 2024 - Web Tech ID
+        </div>
+    </div>
+</footer>
+        </>
+    )
+}

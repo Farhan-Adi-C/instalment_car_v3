@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AuthAdminController;
 use App\Http\Controllers\AuthSocietyController;
 use App\Http\Controllers\InstalmentController;
 use App\Http\Controllers\ValidationController;
@@ -23,3 +25,13 @@ Route::get("/instalment_cars/{id}", [InstalmentController::class, "getById"])->m
 
 Route::post("/applications", [ApplicationController::class, "apply"])->middleware("auth:sanctum");
 Route::get("/applications", [ApplicationController::class, "getApplication"])->middleware("auth:sanctum");
+
+
+Route::post("/admin/login", [AuthAdminController::class, "login"]);
+Route::post("/admin/logout", [AuthAdminController::class, "logout"])->middleware("auth:sanctum");
+Route::get("/admin/get-validator", [AuthAdminController::class, "getValidator"])->middleware("auth:sanctum");
+
+Route::get("/admin/get-society", [AdminController::class, 'getAllSociety'])->middleware("auth:sanctum");
+Route::get("/admin/get-society/{id}", [AdminController::class, 'getSocietyById'])->middleware("auth:sanctum");
+Route::post("/admin/update-validation", [AdminController::class, 'updateStatusValidation'])->middleware("auth:sanctum");
+Route::post("/admin/update-application", [AdminController::class, 'updateStatusApplication'])->middleware("auth:sanctum");

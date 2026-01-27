@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('validators', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->foreignId("user_id")->nullable()->constrained("users");
             $table->timestamps();
         });
     }

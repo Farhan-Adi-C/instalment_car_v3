@@ -44,7 +44,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Validator::create([
-            "name" => "Juri-1"
+            "name" => "Juri-1",
+            "user_id" => 1
         ]);
 
         Validation::create([
