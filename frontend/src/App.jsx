@@ -9,6 +9,7 @@ import Instalment from './pages/InstalmentPage';
 import DetailInstalment from './pages/DetailInstalment';
 import LoginAdmin from './pages/admin/LoginAdmin';
 import DashboardAdmin from "./pages/admin/DashboardAdmin";
+import DetailSociety from "./pages/admin/DetailSociety";
 
  
 function App() {
@@ -24,7 +25,8 @@ function App() {
       <Route path='/instalment-car/:id' element={<DetailInstalment />}></Route>
 
       <Route path='/admin/login' element={<LoginAdmin/>}></Route>
-      <Route path='/admin' element={<DashboardAdmin/>}></Route>
+      <Route path='/admin' element={<DashboardAdmin/>}></Route> 
+      <Route path='/admin/society/:id' element={<DetailSociety/>}></Route> 
 
      </Routes>
     </>

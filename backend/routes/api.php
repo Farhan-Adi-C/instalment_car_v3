@@ -34,4 +34,5 @@ Route::get("/admin/get-validator", [AuthAdminController::class, "getValidator"])
 Route::get("/admin/get-society", [AdminController::class, 'getAllSociety'])->middleware("auth:sanctum");
 Route::get("/admin/get-society/{id}", [AdminController::class, 'getSocietyById'])->middleware("auth:sanctum");
 Route::post("/admin/update-validation", [AdminController::class, 'updateStatusValidation'])->middleware("auth:sanctum");
+Route::post("/admin/update-validation-notes", [AdminController::class, 'addNotes'])->middleware("auth:sanctum");
 Route::post("/admin/update-application", [AdminController::class, 'updateStatusApplication'])->middleware("auth:sanctum");

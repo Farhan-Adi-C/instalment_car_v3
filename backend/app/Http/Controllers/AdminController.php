@@ -18,7 +18,7 @@ class AdminController extends Controller
             ], 401);
         }
 
-        $society = Society::with("validation", "application", "regional")->get();
+        $society = Society::with("validation", "application.instalment", "regional")->get();
 
         return response()->json($society, 200);
     }
@@ -32,7 +32,7 @@ class AdminController extends Controller
             ], 401);
         }
 
-        $society = Society::with("validation", "application", "regional")->where("id", $id)->first();
+        $society = Society::with("validation", "application.instalment", "regional")->where("id", $id)->first();
 
         return response()->json($society, 200);
     }
@@ -70,6 +70,23 @@ class AdminController extends Controller
 
         return response()->json([
             "message" => "succes"
+        ], 200);
+    }
+
+    public function addNotes(Request $request) {
+        $validator = $request->user();
+        if (!$validator) {
+            return response()->json([
+                "message" => "Unauthorize User"
+            ], 401);
+        }
+
+        Validation::where("id", $request->validation_id)->update([
+            "validator_notes" => $request->notes
         ]);
+
+                return response()->json([
+            "message" => "succes"
+        ], 200);
     }
 }
